@@ -32,10 +32,7 @@ func NewTransactionService(
     }
 }
 
-// =========================================================
 // START TRANSACTION PROCESS
-// =========================================================
-
 func (s *TransactionService) StartTransaction(userID int, vehicleID int, quantity int, paymentMethod string) error {
 
     // 1. Ambil kendaraan
@@ -121,10 +118,7 @@ func (s *TransactionService) StartTransaction(userID int, vehicleID int, quantit
     return nil
 }
 
-// =========================================================
 // TRANSACTION HISTORY
-// =========================================================
-
 func (s *TransactionService) GetTransactionHistory(userID int) ([]models.Transaction, error) {
     return s.TransactionRepo.GetByUser(userID)
 }
